@@ -1,0 +1,6 @@
+[servers]
+server_1 ansible_host=Public_ip of server_1
+server_11 ansible_host=Public_ip of server_11
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3

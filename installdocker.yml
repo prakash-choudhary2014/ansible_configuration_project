@@ -1,0 +1,19 @@
+---
+- name: this will create install a docker on all hosts
+  hosts: all
+  become: true
+  tasks:
+  -  name: add docker gpg apt key
+     apt_key: 
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+  
+  -  name: add docker repo
+     apt_repository:
+      repo: deb https://download.docker.com/linux/ubuntu focal stable
+      state: present
+
+  -  name: install docker
+     apt: 
+      name: docker-ce
+      state: latest
